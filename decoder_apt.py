@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 # fs, data = wav.read('HDSDR_20201227_070306Z_137100kHz_AF.wav')
-fs, data = wav.read("2024-08-23-2134-RAW-NOAA19")
+fs, data = wav.read("2024-08-23-2134-RAW-NOAA19.wav")
 data_crop = data[20*fs:21*fs]
 # ----- # 
 resample = 4
@@ -27,7 +27,6 @@ plt.title("Signal")
 plt.show()
 
 
-
 frame_width = int(0.5*fs)
 w, h = frame_width, data_am.shape[0]//frame_width
 image = Image.new('RGB', (w, h))
@@ -45,3 +44,7 @@ for p in range(data_am.shape[0]):
         py += 1
         if py >= h:
             break
+
+image = image.resize((w, 4*h))
+plt.imshow(image)
+plt.show()
