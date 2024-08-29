@@ -1,2 +1,2 @@
-# ISS_Senior_Scholarship
-My Senior Scholarship 2024 on how to contact the ISS
+# Senior_Scholarship
+My Senior Scholarship 2024 on how to decode NOAA APT
