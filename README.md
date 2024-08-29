@@ -1,2 +1,2 @@
 # Senior_Scholarship
-My Senior Scholarship 2024 on how to decode NOAA APT
+KB's Senior Scholarship 2024 on decoding APT
