@@ -1,2 +1,2 @@
 # Senior_Scholarship
-KB's Senior Scholarship 2024 on decoding APT
+Senior Scholarship 2024 on decoding APT NOAA satellites
