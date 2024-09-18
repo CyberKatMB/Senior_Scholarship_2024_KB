@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-# fs, data = wav.read('HDSDR_20201227_070306Z_137100kHz_AF.wav')
+# N.B.: this version produces a very dark picture (not helped by the fact all my passes were at night time!)
+
 fs, data = wav.read("2024-08-18-2055-RAW.wav")
 data_crop = data[20*fs:21*fs]
 # ----- # 
