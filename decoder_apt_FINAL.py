@@ -186,41 +186,33 @@ def decode_noaa_audio_to_image(in_path, out_path, black_point, white_point, comp
 
     # load the audio and convert to Hilbert transformed amplitude info
     decoded = audio_to_hilbert(in_path)
-    print(1)
 
     # sampling from the Hilbert transformed signal for desired images
     subsampled = subsample(decoded)
-    print(2)
 
     # digitize signal to valid pixel intensities in the uint8 range
     quantised = quantise(subsampled, black_point=black_point, white_point=white_point)
-    print(3)
 
     # reshape the numpy array to a 2D image array
     reshaped = reshape(quantised)
-    print(4)
 
     # some empirically based filters for noisy rows
     denoised = filter_noisy_rows(reshaped)
-    print(5)
 
     # select the image components to include
     image_components = select_image_components(denoised, components)
-    print(6)
 
     # colorize greyscale image if selected
     if colorize:
         image_components = apply_colormap(image_components)
-    print(7)
 
     # write numpy array to image file
     save_image(image_components, out_path=out_path)
-    print(8)
 # ------------------------------------------------------------------------------- #
 
 decode_noaa_audio_to_image(
         in_path="2024-08-23-2134-RAW-NOAA19.wav",
-        out_path="2024-08-23-2134-RAW-NOAA19.png",
+        out_path="2024-08-23-2134-RAW-NOAA19-BW.png",
         black_point=5,
         white_point=95,
         components=["image_a"],
